@@ -23,7 +23,9 @@ class DynamicArray
   # O(1)
   def pop
     check_index
+    val = self[length-1]
     @length -= 1
+    val
   end
 
   # O(1) ammortized; O(n) worst case. Variable because of the possible
@@ -42,6 +44,7 @@ class DynamicArray
     @store = new_store
     @length -= 1
   end
+
 
   # O(n): has to shift over all the elements.
   def unshift(val)
